@@ -36,7 +36,7 @@ public class StudentController {
 
     @PostMapping("")
     public ResponseEntity<Void> saveStudent(@RequestBody StudentDTO studentDTO) throws URISyntaxException {
-        var studentID = studentService.addStudent(studentDTO);
+        var studentID = studentService.saveStudent(studentDTO);
 
         return ResponseEntity.created(new URI("/student/" + studentID)).build();
     }

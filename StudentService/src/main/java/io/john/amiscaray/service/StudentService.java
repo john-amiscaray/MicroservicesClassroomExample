@@ -26,7 +26,7 @@ public class StudentService {
         return new StudentDTO(student);
     }
 
-    public Long addStudent(StudentDTO student) {
+    public Long saveStudent(StudentDTO student) {
         var detachedStudent = new Student(student);
 
         studentRepo.save(detachedStudent);
