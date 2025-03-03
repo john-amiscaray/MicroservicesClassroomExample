@@ -43,7 +43,7 @@ public class StudentController {
 
         courseServiceClient.saveNewStudent(new CourseSaveStudentRequest(studentID))
                 .then()
-                .subscribe(_result -> System.out.println("Hello World"));
+                .subscribe(); // Do nothing when the request goes through.
 
         return ResponseEntity.created(new URI("/student/" + studentID)).build();
     }
