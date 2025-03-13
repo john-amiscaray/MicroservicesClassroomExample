@@ -22,6 +22,7 @@
         <module>APIGateway</module>
         <module>StudentService</module>
         <module>CourseService</module>
+        <module>ConfigServer</module>
     </modules>
 
     <dependencies>
