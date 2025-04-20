@@ -12,7 +12,7 @@ public class SecurityConfig {
     @Bean
     public SecurityWebFilterChain springSecurityFilterChain(ServerHttpSecurity http) {
         http.authorizeExchange(ex -> ex
-                        //.pathMatchers("/student").authenticated()
+                        .pathMatchers("/student").authenticated()
                         .anyExchange().permitAll()
                 ).oauth2ResourceServer(oauth2 -> oauth2.jwt(Customizer.withDefaults()));
 
