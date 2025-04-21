@@ -23,6 +23,7 @@
         <module>StudentService</module>
         <module>CourseService</module>
         <module>ConfigServer</module>
+        <module>AuthService</module>
     </modules>
 
     <dependencies>
@@ -67,6 +68,13 @@
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-dependencies</artifactId>
                 <version>${spring-cloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.security</groupId>
+                <artifactId>spring-security-bom</artifactId>
+                <version>6.2.3</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
