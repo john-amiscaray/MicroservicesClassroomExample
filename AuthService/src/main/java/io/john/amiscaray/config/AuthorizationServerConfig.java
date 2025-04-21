@@ -8,7 +8,6 @@ import io.john.amiscaray.util.KeyGeneratorUtils;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.core.env.Environment;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.oauth2.core.AuthorizationGrantType;
@@ -29,9 +28,8 @@ public class AuthorizationServerConfig {
     @Bean
     public RegisteredClientRepository registeredClientRepository(
             PasswordEncoder passwordEncoder,
-            Environment env
+            @Value("${client.student-service.client-secret}") String rawSecret
     ) {
-        var rawSecret = env.getProperty("client.student-service.client-secret");
         var encodedSecret = passwordEncoder.encode(rawSecret);
 
         var registeredClient = RegisteredClient.withId(UUID.randomUUID().toString())
